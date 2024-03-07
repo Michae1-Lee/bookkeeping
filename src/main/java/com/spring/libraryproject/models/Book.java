@@ -1,6 +1,7 @@
 package com.spring.libraryproject.models;
 
 public class Book {
+    private int id;
     private int person_id;
     private String book_title;
     private int year_creation;
@@ -12,6 +13,13 @@ public class Book {
         this.person_id = person_id;
         this.book_title = book_title;
         this.year_creation = year_creation;
+    }
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getPerson_id() {

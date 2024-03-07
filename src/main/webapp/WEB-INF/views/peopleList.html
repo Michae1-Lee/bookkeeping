@@ -5,6 +5,11 @@
     <title>All People</title>
 </head>
 <body>
-
+<div th:each="person: ${personList}">
+    <a th:href="@{/people/{id}(id = ${person.getId()})}"
+       th:text="${person.getFull_name()}+', '+${person.getBirth_year()}">Person</a>
+</div>
+<hr/>
+<a href="/people/add">Add new person</a>
 </body>
 </html>
