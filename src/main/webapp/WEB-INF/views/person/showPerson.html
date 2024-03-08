@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Person</title>
+</head>
+<body>
+<p th:text="${person.getFull_name() + ', ' + person.getYear_of_birth()}">person</p>
+<a th:href="@{/people/{id}/edit(id=${person.getId()})}">Edit Person</a>
+<hr/>
+<form th:method="POST" th:action="@{/people/{id}/delete(id=${person.getId()})}" th:object="${person}">
+    <input type="submit" value="Delete Person">
+</form>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book</title>
+</head>
+<body>
+<p th:text="${book.getAuthor()+', '+ book.getTitle() + ', ' + book.getYear()}">person</p>
+<p th:text="'Kniga zanyata chelovekom s id: ' + ${book.getPerson_id().get()}">smth</p>
+<a th:href="@{/books/{id}/edit(id=${book.getId()})}">Edit Book</a>
+<hr/>
+<form th:method="POST" th:action="@{/books/{id}/delete(id=${book.getId()})}" th:object="${book}">
+    <input type="submit" value="Delete Book">
+</form>
+<form th:method="POST" th:action="@{/books/{id}/release(id=${book.getId()})}" th:object="${book}">
+    <input type="submit" value="Release Book">
+</form>
+</body>
+</html>

@@ -1,19 +1,42 @@
 package com.spring.libraryproject.models;
 
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Size;
+
+import java.util.Optional;
+
+/**
+ * @author Neil Alishev
+ */
 public class Book {
     private int id;
-    private int person_id;
-    private String book_title;
-    private int year_creation;
+    private Optional<Integer> person_id;
 
-    public Book(){
-
+    public Optional<Integer> getPerson_id() {
+        return person_id;
     }
-    public Book(int person_id, String book_title, int year_creation) {
+
+    public void setPerson_id(Optional<Integer> person_id) {
         this.person_id = person_id;
-        this.book_title = book_title;
-        this.year_creation = year_creation;
     }
+
+    private String title;
+
+    private String author;
+
+    private int year;
+
+    public Book() {
+
+    }
+
+    public Book(String title, String author, int year) {
+        this.title = title;
+        this.author = author;
+        this.year = year;
+    }
+
     public int getId() {
         return id;
     }
@@ -22,27 +45,27 @@ public class Book {
         this.id = id;
     }
 
-    public int getPerson_id() {
-        return person_id;
+    public String getTitle() {
+        return title;
     }
 
-    public void setPerson_id(int person_id) {
-        this.person_id = person_id;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public String getBook_title() {
-        return book_title;
+    public String getAuthor() {
+        return author;
     }
 
-    public void setBook_title(String book_title) {
-        this.book_title = book_title;
+    public void setAuthor(String author) {
+        this.author = author;
     }
 
-    public int getYear_creation() {
-        return year_creation;
+    public int getYear() {
+        return year;
     }
 
-    public void setYear_creation(int year_creation) {
-        this.year_creation = year_creation;
+    public void setYear(int year) {
+        this.year = year;
     }
 }
