@@ -1,1 +1,1 @@
-spring mvc, jdbc template
+spring mvc, jdbc template, postgresql
