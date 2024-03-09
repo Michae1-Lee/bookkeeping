@@ -1,13 +1,11 @@
 package com.spring.libraryproject.controllers;
 
 import com.spring.libraryproject.dao.PersonDAO;
-import com.spring.libraryproject.models.Book;
 import com.spring.libraryproject.models.Person;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
@@ -21,6 +19,7 @@ public class LibraryController {
     @GetMapping("/{id}")
     public String showPerson(@PathVariable("id") int id, Model model){
         model.addAttribute("person", personDAO.show(id));
+        model.addAttribute("books", personDAO.smth(id));
         return "person/showPerson";
     }
     @GetMapping("/{id}/edit")

@@ -1,6 +1,7 @@
 package com.spring.libraryproject.dao;
 
 import com.spring.libraryproject.models.Book;
+import com.spring.libraryproject.models.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -44,4 +45,5 @@ public class BookDAO {
     public void release(int id){
         jdbcTemplate.update("UPDATE book set person_id=null where id = ?", id);
     }
+
 }

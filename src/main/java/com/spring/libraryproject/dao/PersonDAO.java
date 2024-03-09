@@ -1,13 +1,11 @@
 package com.spring.libraryproject.dao;
 
+import com.spring.libraryproject.models.Book;
 import com.spring.libraryproject.models.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
@@ -37,5 +35,8 @@ public class PersonDAO {
     public void delete(int id){
         jdbcTemplate.update("DELETE FROM PERSON WHERE id=?", id);
     }
-
+    public List<Book> smth(int person_id){
+        return jdbcTemplate.query("SELECT * FROM book WHERE person_id = ?",new Object[]{person_id},
+                new BeanPropertyRowMapper<>(Book.class));
+    }
 }

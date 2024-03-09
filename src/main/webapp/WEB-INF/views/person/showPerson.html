@@ -8,6 +8,11 @@
 <p th:text="${person.getFull_name() + ', ' + person.getYear_of_birth()}">person</p>
 <a th:href="@{/people/{id}/edit(id=${person.getId()})}">Edit Person</a>
 <hr/>
+<p th:text="'Taken books: '">s</p>
+<div th:each="book: ${books}">
+    <a th:text="${book.getTitle()+ ' ' + book.getAuthor()+ ' ' + book.getYear()}">Books</a>
+</div>
+<hr/>
 <form th:method="POST" th:action="@{/people/{id}/delete(id=${person.getId()})}" th:object="${person}">
     <input type="submit" value="Delete Person">
 </form>
