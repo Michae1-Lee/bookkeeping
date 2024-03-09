@@ -1,1 +1,1 @@
-spring mvc, jdbc template, postgresql
+spring, jdbc template, postgresql, thymeleaf
