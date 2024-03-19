@@ -1,31 +1,62 @@
 package com.spring.libraryproject.models;
 
+import jakarta.persistence.*;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
 
 import java.util.Optional;
 
-/**
- * @author Neil Alishev
- */
+@Entity
+@Table(name = "book")
 public class Book {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private int id;
-    private Optional<Integer> person_id;
-
-    public Optional<Integer> getPerson_id() {
-        return person_id;
-    }
-
-    public void setPerson_id(Optional<Integer> person_id) {
-        this.person_id = person_id;
-    }
-
+    @ManyToOne
+    @JoinColumn(name = "person_id", referencedColumnName = "id")
+    private Person person;
+    @Transient
+    private Integer personId;
+    @Transient
+    private String bookName;
+    @Column(name = "title")
     private String title;
-
+    @Column(name = "author")
     private String author;
-
+    @Column(name = "year")
     private int year;
+
+    public void setPersonId(Integer personId) {
+        this.personId = personId;
+    }
+
+    public String getBookName() {
+        return bookName;
+    }
+
+    public void setBookName(String bookName) {
+        this.bookName = bookName;
+    }
+
+    public Integer getPersonId() {
+        return personId;
+    }
+
+    public void setPersonId(int personId) {
+        this.personId = personId;
+    }
+
+    public Person getPerson() {
+        return person;
+    }
+
+    public void setPerson(Person person) {
+        this.person = person;
+    }
+
+
 
     public Book() {
 

@@ -2,14 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>All People</title>
+    <title>Все люди</title>
 </head>
 <body>
 <div th:each="person: ${personList}">
     <a th:href="@{/people/{id}(id = ${person.getId()})}"
-       th:text="${person.getFull_name()}+', '+${person.getYear_of_birth()}">Person</a>
+       th:text="${person.getFull_name()}+', '+${person.getYear_of_birth()} + ', id: ' + ${person.getId()}">Person</a>
 </div>
 <hr/>
-<a href="/people/add">Add new person</a>
+<form th:action="@{/people/add}">
+    <input type="submit" value="Добавить человека!">
+</form>
+<form th:action="@{/books}">
+    <input type="submit" value="Страница с книгами">
+</form>
 </body>
 </html>

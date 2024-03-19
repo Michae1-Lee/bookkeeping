@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Все книги</title>
+</head>
+<body>
+<div th:each="book: ${bookList}">
+    <a th:href="@{/books/{id}(id = ${book.getId()})}"
+       th:text="${book.getTitle()}+', '+${book.getAuthor()}+', '+${book.getYear()}">Book</a>
+</div>
+<hr/>
+<div style="display: flex;">
+    <form th:action="@{/books/add}">
+        <input type="submit" value="Добавить книгу">
+    </form>
+    <form th:action="@{/books/search}">
+        <input type="submit" value="Найти книгу">
+    </form>
+</div>
+
+<form th:action="@{/people}">
+    <input type="submit" value="Страница с людьми">
+</form>
+
+</body>
+</html>
