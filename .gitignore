@@ -1,8 +1,13 @@
+<<<<<<< HEAD
+=======
+HELP.md
+>>>>>>> 321314b (spring boot added)
 target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
 
+<<<<<<< HEAD
 ### IntelliJ IDEA ###
 .idea/modules.xml
 .idea/jarRepositories.xml
@@ -13,6 +18,9 @@ target/
 *.ipr
 
 ### Eclipse ###
+=======
+### STS ###
+>>>>>>> 321314b (spring boot added)
 .apt_generated
 .classpath
 .factorypath
@@ -21,6 +29,15 @@ target/
 .springBeans
 .sts4-cache
 
+<<<<<<< HEAD
+=======
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+>>>>>>> 321314b (spring boot added)
 ### NetBeans ###
 /nbproject/private/
 /nbbuild/
@@ -33,6 +50,9 @@ build/
 
 ### VS Code ###
 .vscode/
+<<<<<<< HEAD
 
 ### Mac OS ###
 .DS_Store
+=======
+>>>>>>> 321314b (spring boot added)
